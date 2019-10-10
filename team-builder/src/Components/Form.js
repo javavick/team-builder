@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Form() {
+function Form({ teamMembers, setTeamMembers }) {
   // Slice of State
   const [formData, setFormData] = useState({
     name: "",
@@ -16,11 +16,20 @@ function Form() {
     });
   }
 
+  // Submit Handler
+  function submitHandler(event) {
+    event.preventDefault();
+    setTeamMembers({
+      ...teamMembers,
+      formData
+    });
+  }
+
   // Component
   return (
     <div>
       <h1>Team Member</h1>
-      <form>
+      <form onSubmit={submitHandler}>
         <label>
           Name: <span></span>
           <input
