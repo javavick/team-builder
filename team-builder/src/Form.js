@@ -48,6 +48,8 @@ function Form() {
           <option></option>
         </select>
       </label>
+
+      <button>Submit</button>
     </form>
   );
 }
