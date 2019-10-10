@@ -1,14 +1,20 @@
 import React from "react";
 
 function MembersCard({ teamMembers }) {
+  // Variables
+  let id = 0;
+
+  // Component
   return (
     <div>
       {teamMembers.map((index) => {
-        <div>
-          <h2>{index.name}</h2>
-          <p>{index.email}</p>
-          <p>{index.role}</p>
-        </div>;
+        return (
+          <div key={id++}>
+            <h2>{index.name}</h2>
+            <h3>{index.role}</h3>
+            <p>{index.email}</p>
+          </div>
+        );
       })}
     </div>
   );

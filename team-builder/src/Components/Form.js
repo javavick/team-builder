@@ -19,16 +19,14 @@ function Form({ teamMembers, setTeamMembers }) {
   // Submit Handler
   function submitHandler(event) {
     event.preventDefault();
-    setTeamMembers({
-      ...teamMembers,
-      formData
-    });
+    setTeamMembers([...teamMembers, formData]);
+    event.target.reset();
   }
 
   // Component
   return (
     <div>
-      <h1>Team Member</h1>
+      <h1>Add Team Member</h1>
       <form onSubmit={submitHandler}>
         <label>
           Name: <span></span>
@@ -55,10 +53,10 @@ function Form({ teamMembers, setTeamMembers }) {
         <label>
           Role: <span></span>
           <select id="roleSelect" name="role" onChange={changeHandler}>
-            <option value="none"></option>
-            <option value="frontEnd">Front-End Engineer</option>
-            <option value="backEnd">Back-End Engineer</option>
-            <option value="designer">UX Designer</option>
+            <option value="No Role"></option>
+            <option value="Front-End Engineer">Front-End Engineer</option>
+            <option value="Back-End Engineer">Back-End Engineer</option>
+            <option value="UX Designer">UX Designer</option>
           </select>
         </label>
         <br />
