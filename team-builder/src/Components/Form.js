@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 
 function Form() {
-  // Slice of state for the form data
+  // Slice of State
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     role: ""
   });
 
-  // Change handler function
+  // Change Handler
   function changeHandler(event) {
     setFormData({
       ...formData,
@@ -16,7 +16,7 @@ function Form() {
     });
   }
 
-  // The form itself
+  // Component
   return (
     <div>
       <h1>Team Member</h1>
