@@ -1,4 +1,5 @@
 import React from "react";
+import MembersCard from "./MembersCard.js";
 
 function MembersList({ teamMembers }) {
   return (
